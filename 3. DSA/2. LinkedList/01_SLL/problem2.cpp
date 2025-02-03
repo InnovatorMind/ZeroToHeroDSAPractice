@@ -3,8 +3,6 @@
 #include <iostream>
 using namespace std;
 
-void display();
-
 struct node
 {
     int num;
