@@ -1,12 +1,13 @@
-// Reads an integer from the user
+// Reads a floating-point number from the user
 
 #include <iostream>
 using namespace std;
 
 int main() {
-    int num;
-    cout << "Enter an integer: ";
+    float num;
+    cout << "Enter a floating-point number: ";
     cin >> num;
     cout << "You entered: " << num << endl;
     return 0;
 }
+
