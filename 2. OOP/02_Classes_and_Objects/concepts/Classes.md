@@ -12,15 +12,18 @@ A **class** is a user-defined blueprint or prototype from which objects are crea
   class ClassName {
     // Access specifiers and members
   };
+  ```
 
-Components of a Class
-Attributes (Data Members): Variables that hold the state of an object.
+## **Components of a Class**
 
-Methods (Member Functions): Functions that define behaviors or actions of an object.
+1. **Attributes (Data Members):** Variables that hold the state of an object.
 
-Access Specifiers: Keywords that set the accessibility of class members (public, private, protected).
+2. **Methods (Member Functions):** Functions that define behaviors or actions of an object.
 
-Example: Defining a Class
+3. **Access Specifiers:** Keywords that set the accessibility of class members (`public`, `private`, `protected`).
+
+## **Example: Defining a Class**
+
 ```cpp
 // C++ example
 class Car {
@@ -41,13 +44,18 @@ public:
 };
 ```
 
-Key Takeaways:
+---
 
-A class encapsulates data for the object.
-Defines a datatype, similar to a struct but with functions included.
+**Key Takeaways:**
 
-Next Topics:
+- A class encapsulates data for the object.
+- Defines a datatype, similar to a struct but with functions included.
 
-Learn how to create instances in Objects.md.
+---
 
-Explore properties and behaviors in Attributes_Methods.md.
+**Next Topics:**
+
+- Learn how to create instances in [Objects.md](Objects.md).
+- Explore properties and behaviors in [Attributes_Methods.md](Attributes_Methods.md).
+
+---
