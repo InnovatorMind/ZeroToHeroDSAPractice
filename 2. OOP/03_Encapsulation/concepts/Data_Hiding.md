@@ -12,7 +12,7 @@ Data hiding is an aspect of encapsulation that restricts access to the inner wor
 
 ## **Implementation in C++**
 
-- Use the `private` keyword to restrict access to class members.
+- Use the `private` keyword to restrict accessgi to class members.
 - Provide `public` methods to interact with the data safely.
 
 **Example:**
