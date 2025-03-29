@@ -1,17 +1,14 @@
-// Find the area of a circle
+// Write a program to input a character from the user and print its ASCII code
 
 #include <iostream>
 using namespace std;
-int main()
-{
-    int r;
-    float pi = 3.14, area;
 
-    cout << "Enter radius of the cirlce : ";
-    cin >> r;
-    area = pi * r * r;
+int main() {
+    char ch;
+    cout << "Enter a character: ";
+    cin >> ch;
 
-    cout << "Area of circle " <<area <<" having radius " <<r <<endl;
+    cout << "The ASCII code for " << ch << " is: " << int(ch) << endl;
 
     return 0;
 }

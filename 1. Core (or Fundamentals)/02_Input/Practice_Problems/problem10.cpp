@@ -1,15 +1,15 @@
-// Calculate the average of three integers
+// . Write a program to input an ASCII code from the user and print its corresponding character.
 
 #include <iostream>
 using namespace std;
 
-int main() {
-    int num1, num2, num3;
-    cout << "Enter three integers: ";
-    cin >> num1 >> num2 >> num3;
+int main()
+{
+    int asciiCode;
+    cout << "Enter an ASCII code: ";
+    cin >> asciiCode;
 
-    float average = (num1 + num2 + num3) / 3.0;
-    cout << "The average is: " << average << endl;
+    cout << "The character for ASCII code " << asciiCode << " is: " << char(asciiCode) << endl;
 
     return 0;
 }

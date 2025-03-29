@@ -1,21 +1,18 @@
-// TO calculate the sum of two integers. Number are taken from user through Keyboard
+// Calculate the circumference of a circle
 
 #include <iostream>
 using namespace std;
+
 int main()
 {
-    int a, b, sum;
-    cout << "Enter value of a number: ";
-    cin >> a;
-    cout << "Enter value of b number: ";
-    cin >> b;
-    sum = a + b;
+    float radius;
+    float pi = 3.14;
 
-    cout << "Sum is: " << sum;
+    cout << "Enter the radius of the circle: ";
+    cin >> radius;
 
-    // or
-    // cout << "Enter value of a and b number: ";
-    // cin>>a>>b;
+    float circumference = 2 * pi * radius;
+    cout << "The circumference is: " << circumference << endl;
 
     return 0;
 }

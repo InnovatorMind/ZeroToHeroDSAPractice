@@ -1,18 +1,20 @@
-// Write a program to ask user about the cost price and selling price banana per dozen. Calculate the profit or loss eamed upon selling 25 bananas.
+// Write a program to take time as an input in below given format and convert the time format and display the result as given below.
+// User Input date format - "HH:MM"
+// Output format - "HH hour and MM Minute"
 
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    float costPrice, sellingPrice;
-    cout << "Enter the cost price per dozen: ";
-    cin >> costPrice;
-    cout << "Enter the selling price per dozen: ";
-    cin >> sellingPrice;
+int main() {
+    int hour, minute;
+    char colon;
+    cout << "Enter time (HH:MM): ";
+    cin >> hour >> colon >> minute;
 
-    float profitOrLoss = ((sellingPrice - costPrice) / 12) * 25;
-    cout << "Profit or loss for selling 25 bananas is: " << profitOrLoss << endl;
+    cout << hour << " hour and " << minute << " Minute" << endl;
 
     return 0;
 }
+
+
+
