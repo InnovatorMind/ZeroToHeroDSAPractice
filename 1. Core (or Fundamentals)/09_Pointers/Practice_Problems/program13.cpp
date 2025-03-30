@@ -1,28 +1,28 @@
-// Swap two integers using reference variables.
-
-// Write a program to swap the values of two integers using reference variables.
-
+// Write a program to pass an array to a function using a pointer and modify the array elements within the function.
 
 #include <iostream>
 using namespace std;
 
-void swapValues(int &a, int &b) {
-    int temp = a;
-    a = b;
-    b = temp;
+// Function to modify array elements
+void modifyArray(int *arr, int size) {
+    cout << "Modified array elements:" << endl;
+    for (int i = 0; i < size; ++i) {
+        arr[i] *= 2; // Modify each element by multiplying by 2
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 }
 
 int main() {
-    int num1 = 10;
-    int num2 = 20;
+    int arr[5] = {1, 2, 3, 4, 5};
 
-    cout << "Before swapping:" << endl;
-    cout << "num1: " << num1 << ", num2: " << num2 << endl;
+    cout << "Original array elements:" << endl;
+    for (int i = 0; i < 5; ++i) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 
-    swapValues(num1, num2);
-
-    cout << "After swapping:" << endl;
-    cout << "num1: " << num1 << ", num2: " << num2 << endl;
+    modifyArray(arr, 5); // Pass the array by pointer
 
     return 0;
 }

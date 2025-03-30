@@ -1,43 +1,31 @@
-// Understand about Pointer To Pointer
+//  Reference to a reference.
+
+// Write a program to demonstrate the concept of a reference to a reference.
+//  Create a reference to an integer, then create a reference to that reference,
+//  and modify the value through the double reference.
 
 #include <iostream>
 using namespace std;
 
-int main() {
-    int num = 10; // Declare an integer variable
-    int *ptr = &num; // ptr is a pointer to an integer
-    int **pptr = &ptr; // pptr is a pointer to a pointer
+void modifyValue(int &ref1, int &ref2) {
+    ref2 = 20; // Modify the value through the double reference
+}
 
-    cout << "Value of num: " << num << endl;
-    cout << "Value of num using ptr: " << *ptr << endl;
-    cout << "Value of num using pptr: " << **pptr << endl;
-    cout << "Address of num: " << ptr << endl;
-    cout << "Address of ptr: " << &ptr << endl;
-    cout << "Address of pptr: " << &pptr << endl;
+int main() {
+    int num = 10;
+    int &ref1 = num; // Reference to num
+    int &ref2 = ref1; // Reference to the reference
+
+    cout << "Original value: " << num << endl;
+    cout << "Reference value: " << ref1 << endl;
+    cout << "Double reference value: " << ref2 << endl;
+
+    modifyValue(ref1, ref2);
+
+    cout << "New original value: " << num << endl;
+    cout << "New reference value: " << ref1 << endl;
+    cout << "New double reference value: " << ref2 << endl;
 
     return 0;
 }
 
-// variable: num
-//    +---------+
-//    |         |
-//    |    10   |
-//    |         |
-//    +---------+
-// address: 0x7fffbf4a4b98
-
-// variable: ptr
-//    +----------------+
-//    |                |
-//    | 0x7fffbf4a4b98 |
-//    |                |
-//    +----------------+
-// address: 0x7fffbf4a4b90
-
-// variable: pptr
-//    +----------------+
-//    |                |
-//    | 0x7fffbf4a4b90 |
-//    |                |
-//    +----------------+
-// address: 0x7fffbf4a4b88

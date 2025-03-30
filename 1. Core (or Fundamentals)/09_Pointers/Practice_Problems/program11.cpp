@@ -1,28 +1,26 @@
-// What is a pointer to an integer?
-// How do you declare a pointer to a character? 
-// Can you explain what a pointer to a float is and how it is used?
+// Write a program to swap the values of two integers using pointers.
+
 
 #include <iostream>
 using namespace std;
 
+void swapValues(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 int main() {
-    // Pointer to an integer
-    int num = 10;
-    int *intPtr = &num;
-    cout << "Value of num using intPtr: " << *intPtr << endl;
-    cout << "Address of num: " << intPtr << endl;
+    int num1 = 10;
+    int num2 = 20;
 
-    // Pointer to a character
-    char ch = 'A';
-    char *charPtr = &ch;
-    cout << "Value of ch using charPtr: " << *charPtr << endl;
-    cout << "Address of ch: " << charPtr << endl;
+    cout << "Before swapping:" << endl;
+    cout << "num1: " << num1 << ", num2: " << num2 << endl;
 
-    // Pointer to a float
-    float fnum = 5.5;
-    float *floatPtr = &fnum;
-    cout << "Value of fnum using floatPtr: " << *floatPtr << endl;
-    cout << "Address of fnum: " << floatPtr << endl;
+    swapValues(&num1, &num2);
+
+    cout << "After swapping:" << endl;
+    cout << "num1: " << num1 << ", num2: " << num2 << endl;
 
     return 0;
 }

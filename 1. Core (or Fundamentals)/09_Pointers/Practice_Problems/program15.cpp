@@ -1,30 +1,45 @@
-//  Reference to a reference.
-
-// Write a program to demonstrate the concept of a reference to a reference.
-//  Create a reference to an integer, then create a reference to that reference,
-//  and modify the value through the double reference.
+// Write a code that demonstrates passing an array using simple (by value), pointer, and reference methods
 
 #include <iostream>
 using namespace std;
 
-void modifyValue(int &ref1, int &ref2) {
-    ref2 = 20; // Modify the value through the double reference
+// Simple method (by value)
+void printArraySimple(int arr[], int size) {
+    for (int i = 0; i < size; ++i) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+// Pointer method
+void modifyArrayPointer(int *arr, int size) {
+    for (int i = 0; i < size; ++i) {
+        arr[i] *= 2; // Modify each element by multiplying by 2
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+// Reference method
+void modifyArrayReference(int (&arr)[5]) {
+    for (int i = 0; i < 5; ++i) {
+        arr[i] *= 2; // Modify each element by multiplying by 2
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 }
 
 int main() {
-    int num = 10;
-    int &ref1 = num; // Reference to num
-    int &ref2 = ref1; // Reference to the reference
+    int arr[5] = {1, 2, 3, 4, 5};
 
-    cout << "Original value: " << num << endl;
-    cout << "Reference value: " << ref1 << endl;
-    cout << "Double reference value: " << ref2 << endl;
+    cout << "Original array elements (Simple Method):" << endl;
+    printArraySimple(arr, 5);
 
-    modifyValue(ref1, ref2);
+    cout << "Modified array elements (Pointer Method):" << endl;
+    modifyArrayPointer(arr, 5);
 
-    cout << "New original value: " << num << endl;
-    cout << "New reference value: " << ref1 << endl;
-    cout << "New double reference value: " << ref2 << endl;
+    cout << "Modified array elements (Reference Method):" << endl;
+    modifyArrayReference(arr);
 
     return 0;
 }

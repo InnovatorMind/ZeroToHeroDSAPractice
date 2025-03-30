@@ -1,21 +1,32 @@
-// Compare two pointers and check if they point to the same address:
+// Pass an array to a function using reference.
+
+// Write a function that takes an array and its size as arguments using reference parameters.
+// The function should modify the array elements and print them.
 
 #include <iostream>
 using namespace std;
 
-int main() {
-    int num1 = 10;
-    int num2 = 20;
-    int *ptr1 = &num1;
-    int *ptr2 = &num2;
-
-    if (ptr1 == ptr2) {
-        cout << "ptr1 and ptr2 point to the same address." << endl;
-    } else {
-        cout << "ptr1 and ptr2 do not point to the same address." << endl;
+// Function to modify and print array elements
+void modifyAndPrintArray(int (&arr)[5]) {
+    cout << "Modified array elements:" << endl;
+    for (int i = 0; i < 5; ++i) {
+        arr[i] *= 2; // Modify each element by multiplying by 2
+        cout << arr[i] << " ";
     }
+    cout << endl;
+}
+
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};
+
+    cout << "Original array elements:" << endl;
+    for (int i = 0; i < 5; ++i) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    modifyAndPrintArray(arr); // Pass the array by reference
 
     return 0;
 }
-
 

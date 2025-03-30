@@ -1,31 +1,19 @@
-// Understand referance variable
+// Create a function that takes a pointer to an integer and modifies the value of the integer through the pointer.
 
 #include <iostream>
 using namespace std;
 
+void modifyValue(int *ptr) {
+    *ptr = 30; // Modify the value through the pointer
+}
+
 int main() {
-    int original = 10;
-    int &ref = original; // ref is a reference to original
+    int num = 10;
+    cout << "Original value: " << num << endl;
 
-    cout << "Original value: " << original << endl;
-    cout << "Reference value: " << ref << endl;
+    modifyValue(&num); // Pass the address of num to the function
 
-    ref = 20; // Changing the reference changes the original variable
-
-    cout << "New original value: " << original << endl;
-    cout << "New reference value: " << ref << endl;
+    cout << "Modified value: " << num << endl;
 
     return 0;
 }
-
-// It provides an alternative name to access the same memory location 
-// as the original variable.
-//  Once a reference is initialized to a variable,
-// both the reference and the original variable refer to the same value
-//  and any changes made through one are reflected in the other.
-
-// Original value: 10
-// Reference value: 10
-// New original value: 20
-// New reference value: 20
-
