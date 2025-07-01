@@ -1,7 +1,3 @@
-Great! Let's break down **`list`** in C++ step by step.
-
----
-
 ## 🔹 What is `list` in C++?
 
 `list` is a **container** in the **Standard Template Library (STL)** that represents a **doubly linked list**. Unlike arrays or vectors, lists allow:
