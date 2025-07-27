@@ -9,17 +9,36 @@
 #include<vector>
 using namespace std;
 
-bool uniquePair(vector<int> nums) {
-    int left = 0, right = nums.size()-1;
-
-    return true;
+vector<vector <int>> uniquePair(vector<int> nums, int key) {
+    vector<vector <int>> result;
+    int left = 0, right = 1;
+    while(left< right) {
+        int diff = nums[right] - nums[left];
+        if(diff == key){
+            result.push_back({nums[left], nums[right]});
+            left++;
+            right++;
+        } else if(diff < key) {
+            right ++;
+        } else {
+            left++;
+        }
+    }
+    return result;
 }
 
 int main()
 {
-    vector<int> nums = {1, 2, 3, 2, 1};
-    // vector<int> nums = {1, 2, 3, 5, 1};
-    cout << "isPalindrome: " << (uniquePair(nums) ? "Yes" : "No"); // O(n)
+    vector<int> nums = {1, 3, 5, 7};
+    int key = 2;
+    auto paires = uniquePair(nums, key);
+    for (const auto& row : paires) {
+        for (int val : row) {
+            cout << val << " ";
+        }
+        cout << endl;
+    }
 
  return 0;
 }
+//done got a dopamine hit 
