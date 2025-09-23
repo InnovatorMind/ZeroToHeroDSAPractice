@@ -13,15 +13,23 @@ int main()
 {
 
     // Address of each variable
-    node start;
-    start.num = 4;
+    node start; // declaring struct variable
+    start.num = 4; 
 
-    cout << "--->" << &start << endl;
-    cout << "--->" << sizeof(start) << endl;
-    cout << "--->" << &start.num << endl;
-    cout << "--->" << sizeof(start.num) << endl;
-    cout << "--->" << &start.node << endl;
-    cout << "--->" << sizeof(start.node) << endl;
+    cout << "--->" << &start << endl; // 0x401e3ffd90
+    cout << "--->" << sizeof(start) << endl; // 16
+    cout << "--->" << &start.num << endl;  // 0x401e3ffd90
+    cout << "--->" << sizeof(start.num) << endl;  // 4
+    cout << "--->" << &start.node << endl; // 0x401e3ffd98
+    cout << "--->" << sizeof(start.node) << endl; // 8
+
+    // |------------------------------|
+    // | 4byts for int | 4byte empty  |
+    // |------------------------------|
+    // |       8byts for *node        |
+    // |------------------------------|
+            //    total 16 byte
+    
 
     return 0;
 }
