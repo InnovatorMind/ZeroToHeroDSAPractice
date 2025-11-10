@@ -12,7 +12,7 @@ int main()
 
     for (auto pair : lol)
     {
-        cout << pair.first << " scored " << pair.second << endl;
+        cout << pair.first << " scored " << pair.second << endl; // a | 3
     }
 
     return 0;
